@@ -1,0 +1,124 @@
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawerlayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <!-- 主界面布局   viewpager -->
+
+    <RelativeLayout
+        android:id="@+id/mainLayout"
+        android:background="@drawable/zhuti4"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <!-- ViewPager -->
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/bottom_list"
+            android:layout_below="@+id/top_list" >
+        </android.support.v4.view.ViewPager>
+
+        <LinearLayout
+            android:id="@+id/bottom_list"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            android:weightSum="5" >
+
+            <TextView
+                android:id="@+id/main_song_name"
+                android:gravity="center"
+                android:singleLine="true"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/previous"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@android:drawable/ic_media_previous" />
+
+            <ImageButton
+                android:id="@+id/play"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@android:drawable/ic_media_play" />
+
+            <ImageButton
+                android:id="@+id/next"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@android:drawable/ic_media_next" />
+
+            <ImageView
+                android:id="@+id/model"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.99"
+                android:src="@drawable/loop" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/top_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:orientation="horizontal"
+            android:weightSum="3" >
+			
+            <TextView
+                android:textSize="15sp"
+                android:id="@+id/tvlist"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="#FF0000"
+                android:text="列表" />
+            
+            <TextView
+                android:textSize="15sp"
+                android:id="@+id/tvplay"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="正在播放" />
+
+            <TextView
+                android:textSize="15sp"
+                android:id="@+id/tvsearch"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="搜索" />
+        </LinearLayout>
+    </RelativeLayout>
+    
+    <!-- 侧滑抽屉 -->
+    <RelativeLayout
+        android:layout_width="200dp"
+        android:layout_height="fill_parent"
+        android:layout_gravity="left"
+        android:background="#7B68EE" >
+        <ListView
+            android:id="@+id/drawer_menu_listview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+        </ListView>
+    </RelativeLayout>
+
+</android.support.v4.widget.DrawerLayout>
